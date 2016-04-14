@@ -1,4 +1,32 @@
-<html><head>
+<html><head> <script>
+    window.onload = function () {
+      function updateBatteryStatus(battery) {
+        document.querySelector('#charging').textContent = battery.charging ? 'This computer is plugged in' : 'This computer is not plugged in';
+        document.querySelector('#level').textContent = battery.level*100;
+               document.querySelector('#time').textContent = battery.dischargingTime/60-battery.level/60; 
+          document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60;
+      }
+        
+
+      navigator.getBattery().then(function(battery) {
+        // Update the battery status initially when the promise resolves ...
+        updateBatteryStatus(battery);
+
+        // .. and for any subsequent updates.
+        battery.onchargingchange = function () {
+          updateBatteryStatus(battery);
+        };
+
+        battery.onlevelchange = function () {
+          updateBatteryStatus(battery);
+        };
+
+        battery.ondischargingtimechange = function () {
+          updateBatteryStatus(battery);
+        };
+      });
+    };
+  </script>
 
 <link rel="icon" href="images/favicon.png" type="image/png"><title>brm brm car</title></head><body><center><font size="7">brm brm cars!</font>
 <font><a href="/supertux.html">SuperTux</a></font><p/><p/>
@@ -10,6 +38,10 @@
 <awesome>brmbrmcar</awesome><sup>brmbrmcar</sup>
 <p>I want SuperTux online!</p>
 <p>SuperTux 0.4.0 was released on December 20!</p>
+<br/><br/>
+  <font id="charging">(charging state unknown)</font>, and there is
+  <font id="level">unknown</font>% of the battery left, which is roughly
+  <font id="time">unknown</font> minutes left.
 <br/><br/>
 <a href="links.html">Sitemap</a>
 </center></body></html>
