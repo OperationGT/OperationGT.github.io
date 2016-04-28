@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head><title>browser crash test</title></head>
+<head>
+  <style type="text/css">
+#a {
+        margin:0 10px 10px;
+}
+
+#b {
+        width:100%;
+}
+
+</style> <title>browser crash test</title></head>
   <body>
       <p>OK, this browser is pretty good... it hasn't crashed... yet!</p>
       <script>
@@ -10,5 +20,11 @@
           history.pushState(0,0, total );
       }
   </script>
+  <table><tr><td>
+<div id="a">
+<form id="b">
+<input type="text" name="test"/>
+</div>
+</td><td width="1"></td></tr></table> 
   </body>
 </html>
