@@ -1,17 +1,7 @@
 <html><head><title>magic frame</title></head>
-<body><script type="text/javascript">
-function DuckDuckGo(){
-document.getElementById('duck').style.visibility = "visible";
-document.getElementById('wiki').style.visibility = "hidden";
-};
-function Wikipedia(){
-document.getElementById('wiki').style.visibility = "visible";
-document.getElementById('duck').style.visibility = "hidden";
-};
-</script><center><h1>Magic frame!</h1>
+<body><<center><h1>Magic frame!</h1>
 <br/><br/>
-<a onclick="DuckDuckGo()" href="javascript:void(0);">DuckDuckGo</a> 
-<a onclick="Wikipedia()" href="javascript:void(0);">Wikipedia</a>
-<div id="duck"><iframe width="800" height="1000" src="http://duckduckgo.com"/></div>
-<div id="wiki" style="visibility:hidden;"><iframe width="800" height="1000" src="https://www.wikipedia.org/"/></div>
+<a target="magic" href="https://duckduckgo.com">DuckDuckGo</a>
+<a target="magic" href="https://wikipedia.org">Wikipedia</a>
+<iframe name="magic" width="800" height="1000" src="https://duckduckgo.com"/>
 </center></body></html>
