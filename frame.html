@@ -1,1 +1,17 @@
-<html><head><title>magic frame</title></head><body><center><h1>Magic frame!</h1><br/><br/><iframe width="800" height="1000" src="http://duckduckgo.com"/></center></body></html>
+<html><head><title>magic frame</title></head>
+<script type="text/javascript">
+function DuckDuckGo(){
+document.getElementById('duck').style.visibility = "visible";
+document.getElementById('wiki').style.visibility = "hidden";
+};
+function Wikipedia(){
+document.getElementById('wiki').style.visibility = "visible";
+document.getElementById('duck').style.visibility = "hidden";
+};
+</script><body><center><h1>Magic frame!</h1>
+<br/><br/>
+<a onclick="DuckDuckGo()" href="javascript:brmbrmducks;">DuckDuckGo</a> 
+<a onclick="Wikipedia()" href="javascript:wikipedia;">Wikipedia</a>
+<div id="duck"><iframe width="800" height="1000" src="http://duckduckgo.com"/></div>
+<div id="wiki" style="visibility:hidden;"><iframe width="800" height="1000" src="https://www.wikipedia.org/"/></div>
+</center></body></html>
