@@ -1,5 +1,6 @@
 <html><head><title>brmbrmlottery</title></head><body>
 <font id="win" size="7" color="#ccff33"></font>
+<font id="lose"></font>
 
   <script>
     var x = Math.floor((Math.random() * 13983816) + 1);
@@ -7,7 +8,7 @@ if (x < 2) {
     document.getElementById("win").innerHTML = "YOU HAVE WON THE brmbrmlottery!";
 }
 else {
-document.getElementById("win").innerHTML = "LOSER! Your fault for gambling in the first place...";
+document.getElementById("lose").innerHTML = "LOSER! Your fault for gambling in the first place...";
 }
 </script>
 </body></html>
